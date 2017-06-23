@@ -1,4 +1,10 @@
-package 'git'
+include_recipe 'chef-sugar::default'
+
+if windows?
+  chocolatey_package 'git'
+else
+  package 'git'
+end
 
 execute 'git checkout' do
   cwd ENV['HOME']

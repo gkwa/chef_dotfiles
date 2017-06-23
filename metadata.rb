@@ -11,3 +11,5 @@ supports 'ubuntu'
 supports 'windows'
 issues_url 'https://github.com/taylormonacelli/chef_dotfiles/issues'
 source_url 'https://github.com/taylormonacelli/chef_dotfiles'
+
+depends 'chef-sugar'

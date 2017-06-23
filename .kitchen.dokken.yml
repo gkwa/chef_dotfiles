@@ -21,6 +21,12 @@ platforms:
     intermediate_instructions:
       - RUN /usr/bin/apt-get update
 
+- name: fedora-22
+  driver:
+    image: fedora:22
+    pid_one_command: /sbin/init
+    intermediate_instructions:
+
 suites:
   - name: default
     run_list:

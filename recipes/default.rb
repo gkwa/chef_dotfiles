@@ -7,7 +7,7 @@ else
 end
 
 execute 'git checkout' do
-  cwd ENV['HOME']
+  cwd node['dotfiles_install_path']
   command <<-EOH
     git init
     git remote add origin https://github.com/taylormonacelli/dotfiles.git

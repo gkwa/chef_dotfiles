@@ -8,7 +8,7 @@ provisioner:
   name: chef_zero
 
 verifier:
-  name: pester
+  name: inspec
 
 platforms:
   - name: windows-2008r2-chef11.18.6

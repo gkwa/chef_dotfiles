@@ -17,7 +17,6 @@ branches:
 
 services: docker
 
-
 env:
   matrix:
   - INSTANCE=default-centos-69

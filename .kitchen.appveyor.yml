@@ -21,4 +21,4 @@ suites:
     run_list:
       - recipe[test::default]
     attributes:
-      dotfiles_install_path: 'c:\'
+      dotfiles_install_path: 'c:\Users\Vagrant'

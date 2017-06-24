@@ -16,5 +16,6 @@ powershell_script 'git checkout dotfiles' do
   git fetch --depth 50
   $(git checkout --force --track origin/master ) -Or $(git checkout master)
   EOH
+  # if .git/ dir exits, then skip
   not_if "test-path \"#{node['chef_dotfiles']['dotfiles_install_path']}\\.git\""
 end

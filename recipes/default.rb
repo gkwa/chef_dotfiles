@@ -6,6 +6,9 @@ else
   package 'git'
 end
 
+
+
+
 powershell_script 'git checkout dotfiles' do
   code <<-EOH
   $env:PATH="C:\\Program Files\\Git\\bin;$env:PATH"

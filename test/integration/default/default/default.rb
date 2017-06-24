@@ -1,6 +1,6 @@
 if os[:family] == 'windows'
 
-  describe file('c:\.tmux.conf') do
+  describe file('c:\Uses\Vagrant\.tmux.conf') do
     it { should be_a_file }
   end
 

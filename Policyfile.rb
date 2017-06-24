@@ -4,4 +4,4 @@ run_list 'chef_dotfiles::default'
 named_run_list :test, 'chef_dotfiles::default'
 cookbook 'chef_dotfiles', path: '.', branch: 'master'
 
-default['dotfiles_install_path'] = 'c:\Users\Vagrant'
+default['chef_dotfiles']['dotfiles_install_path'] = 'c:\Users\Vagrant'

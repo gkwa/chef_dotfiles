@@ -1,5 +1,4 @@
 include_recipe 'chef-sugar::default'
-include_recipe 'windows'
 
 if windows?
   chocolatey_package 'git'

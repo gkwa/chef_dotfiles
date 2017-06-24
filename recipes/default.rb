@@ -11,6 +11,7 @@ execute 'git checkout' do
 
   cmd = <<-EOH
   pwd
+  Get-ChildItem \*
   EOH
 
   log = Mixlib::ShellOut.new(cmd)

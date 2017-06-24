@@ -1,10 +1,10 @@
 include_recipe 'chef-sugar::default'
 include_recipe 'chocolatey'
 
-unless windows?
+if !windows?
   package 'git'
-
 else
+
   chocolatey_package 'git'
 
   windows_path 'C:\Program Files\Git\bin' do

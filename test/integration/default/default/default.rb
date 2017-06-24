@@ -1,4 +1,4 @@
-if platform?('windows')
+if os[:family] == 'windows'
   describe file('c:\Users\vagrant\dotfiles\.tmux.conf') do
     it { should be_a_file }
   end

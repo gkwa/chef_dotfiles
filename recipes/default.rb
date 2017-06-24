@@ -1,4 +1,6 @@
-if platform?('windows')
+include_recipe 'chef-sugar::default'
+
+if windows?
   chocolatey_package 'git'
 else
   package 'git'

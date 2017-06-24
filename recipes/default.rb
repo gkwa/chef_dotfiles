@@ -6,24 +6,15 @@ else
   package 'git'
 end
 
-execute 'git checkout' do
-  cwd node['dotfiles_install_path']
-
-  cmd = <<-EOH
-  pwd
-  Get-ChildItem \*
-  Get-ChildItem \*\*
-  Get-ChildItem \* | ?{ $_.PSIsContainer }
+powershell_script 'git checkout dotfiles' do
+  code <<-EOH
+  $env:PATH="C:\\Program Files\\Git\\bin;$env:PATH"
+  $env:PATH="C:\\Program Files (x86)\\Git\\bin;$env:PATH"
+  cd "#{node['chef_dotfiles']['dotfiles_install_path']}"
+  git init
+  git remote add origin https://github.com/taylormonacelli/dotfiles.git
+  git fetch --depth 50
+  $(git checkout --force --track origin/master ) -Or $(git checkout master)
   EOH
-
-  log = Mixlib::ShellOut.new(cmd)
-  log.run_command
-  Chef::Log.error "\n\n" + '=' * 80 + "\n\ndocker status: #{log.stdout}\n\n" + '=' * 80
-
-  command <<-EOH
-    git init
-    git remote add origin https://github.com/taylormonacelli/dotfiles.git
-    git fetch --depth 50
-    git checkout --force origin/master
-  EOH
+  not_if "test-path \"#{node['chef_dotfiles']['dotfiles_install_path']}\\.git\""
 end

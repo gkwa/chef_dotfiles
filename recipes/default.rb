@@ -11,21 +11,36 @@ else
   end
 end
 
-unless ::Dir.exist?("#{node['chef_dotfiles']['dotfiles_path']}/.git")
+if node['platform'] == 'windows'
 
-  git "#{node['chef_dotfiles']['dotfiles_path']}/0Y3hyaPYRYjq5oRI9Qc17oqMvyg" do
-    repository 'https://github.com/taylormonacelli/dotfiles.git'
-    depth 10
-    action :sync
+  chocolatey_package 'git'
+
+  windows_path 'C:\Program Files\Git\bin' do
+    action :add
   end
 
-  execute "mv .git #{node['chef_dotfiles']['dotfiles_path']}" do
-    cwd "#{node['chef_dotfiles']['dotfiles_path']}/0Y3hyaPYRYjq5oRI9Qc17oqMvyg"
+  powershell_script "clone dotfiles to \"#{node['chef_dotfiles']['dotfiles_path']}\"" do
+    cwd node['chef_dotfiles']['dotfiles_path']
+    code <<-EOH
+      git init
+      git remote add origin https://github.com/taylormonacelli/dotfiles.git
+      git fetch --depth 50
+      git checkout --force --track origin/master
+    EOH
+    not_if 'test-path .git'
   end
 
-  directory "#{node['chef_dotfiles']['dotfiles_path']}/0Y3hyaPYRYjq5oRI9Qc17oqMvyg" do
-    recursive true
-    action :delete
+else
+
+  bash "clone dotfiles to \"#{node['chef_dotfiles']['dotfiles_path']}\"" do
+    cwd node['chef_dotfiles']['dotfiles_path']
+    code <<-EOH
+      git init
+      git remote add origin https://github.com/taylormonacelli/dotfiles.git
+      git fetch --depth 50
+      git checkout --force --track origin/master
+    EOH
+    not_if 'test -d .git'
   end
 
 end

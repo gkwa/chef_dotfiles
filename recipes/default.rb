@@ -24,4 +24,5 @@ end
 
 execute 'git reset --hard --quiet' do
   cwd node['chef_dotfiles']['dotfiles_path']
+  returns [0, 128]
 end

@@ -63,3 +63,6 @@ suites:
   - name: default
     run_list:
     - recipe[test::default]
+    attributes:
+      chef_dotfiles:
+        dotfiles_path: '/root/dotfiles'

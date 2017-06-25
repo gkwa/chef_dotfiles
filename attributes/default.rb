@@ -1,1 +1,1 @@
-default['chef_dotfiles']['dotfiles_install_path'] = "#{ENV['HOME']}/dotfiles"
+default['chef_dotfiles']['dotfiles_path'] = "#{ENV['HOME']}/dotfiles"

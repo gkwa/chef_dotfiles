@@ -24,6 +24,7 @@ unless ::Dir.exist?("#{node['chef_dotfiles']['dotfiles_path']}/.git")
   end
 
   directory "#{node['chef_dotfiles']['dotfiles_path']}/0Y3hyaPYRYjq5oRI9Qc17oqMvyg" do
+    recursive true
     action :delete
   end
 

@@ -29,6 +29,6 @@ platforms:
       box: chef/windows-server-2012r2-standard
 
 suites:
-  - name: tasks
+  - name: default
     run_list:
       - recipe[test::default]

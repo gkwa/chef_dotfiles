@@ -11,6 +11,11 @@ else
   end
 end
 
+directory node['chef_dotfiles']['dotfiles_path'] do
+  action :create
+  recursive true
+end
+
 if node['platform'] == 'windows'
 
   chocolatey_package 'git'

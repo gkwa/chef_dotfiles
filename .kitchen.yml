@@ -29,7 +29,7 @@ platforms:
       box: chef/windows-server-2012r2-standard
 
 suites:
-  - name: default
+  - name:
     run_list:
       - recipe[test::default]
     attributes:

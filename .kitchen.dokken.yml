@@ -60,7 +60,7 @@ platforms:
     intermediate_instructions:
 
 suites:
-  - name: default
+  - name:
     run_list:
     - recipe[test::default]
     attributes:

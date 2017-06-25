@@ -39,5 +39,5 @@ suites:
   - name: default
     attributes:
       chef_dotfiles:
-        dotfiles_path: 'C:\Users\vagrant\dotfiles'
+        dotfiles_path: 'C:\Users\vagrant'
     named_run_list: myrun

@@ -11,9 +11,17 @@ else
   end
 end
 
-git node['chef_dotfiles']['dotfiles_path'] do
+git "#{node['chef_dotfiles']['dotfiles_path']}/.git" do
   repository 'https://github.com/taylormonacelli/dotfiles.git'
   revision 'master'
   depth 50
   action :sync
+end
+
+execute 'git config core.bare false' do
+  cwd "#{node['chef_dotfiles']['dotfiles_path']}/.git"
+end
+
+execute 'git reset --hard --quiet' do
+  cwd "#{node['chef_dotfiles']['dotfiles_path']}"
 end

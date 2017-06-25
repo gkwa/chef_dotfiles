@@ -1,7 +1,6 @@
-include_recipe 'chef-sugar::default'
 include_recipe 'chocolatey'
 
-if !windows?
+if node['platform'] != 'windows'
   package 'git'
 else
 

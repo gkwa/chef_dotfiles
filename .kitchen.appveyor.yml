@@ -36,7 +36,7 @@ verifier:
   name: inspec
 
 suites:
-  - name:
+  - name: default
     run_list:
       - recipe[test::default]
     attributes:

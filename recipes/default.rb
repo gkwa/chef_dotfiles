@@ -23,5 +23,5 @@ execute 'git config core.bare false' do
 end
 
 execute 'git reset --hard --quiet' do
-  cwd #{node['chef_dotfiles']['dotfiles_path']}
+  cwd node['chef_dotfiles']['dotfiles_path']
 end

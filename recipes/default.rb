@@ -11,19 +11,20 @@ else
   end
 end
 
-git "#{node['chef_dotfiles']['dotfiles_path']}/0Y3hyaPYRYjq5oRI9Qc17oqMvyg" do
-  repository 'https://github.com/taylormonacelli/dotfiles.git'
-  depth 10
-  action :sync
-  not_if { ::Dir.exist?("#{node['chef_dotfiles']['dotfiles_path']}/.git") }
-end
+if ::Dir.exist?("#{node['chef_dotfiles']['dotfiles_path']}/.git")
 
-execute "mv .git #{node['chef_dotfiles']['dotfiles_path']}" do
-  cwd "#{node['chef_dotfiles']['dotfiles_path']}/0Y3hyaPYRYjq5oRI9Qc17oqMvyg"
-  not_if { ::Dir.exist?("#{node['chef_dotfiles']['dotfiles_path']}/.git") }
-end
+  git "#{node['chef_dotfiles']['dotfiles_path']}/0Y3hyaPYRYjq5oRI9Qc17oqMvyg" do
+    repository 'https://github.com/taylormonacelli/dotfiles.git'
+    depth 10
+    action :sync
+  end
 
-directory "#{node['chef_dotfiles']['dotfiles_path']}/0Y3hyaPYRYjq5oRI9Qc17oqMvyg" do
-  action :delete
-  not_if { ::Dir.exist?("#{node['chef_dotfiles']['dotfiles_path']}/.git") }
+  execute "mv .git #{node['chef_dotfiles']['dotfiles_path']}" do
+    cwd "#{node['chef_dotfiles']['dotfiles_path']}/0Y3hyaPYRYjq5oRI9Qc17oqMvyg"
+  end
+
+  directory "#{node['chef_dotfiles']['dotfiles_path']}/0Y3hyaPYRYjq5oRI9Qc17oqMvyg" do
+    action :delete
+  end
+
 end

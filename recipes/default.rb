@@ -11,7 +11,7 @@ else
   end
 end
 
-if ::Dir.exist?("#{node['chef_dotfiles']['dotfiles_path']}/.git")
+unless ::Dir.exist?("#{node['chef_dotfiles']['dotfiles_path']}/.git")
 
   git "#{node['chef_dotfiles']['dotfiles_path']}/0Y3hyaPYRYjq5oRI9Qc17oqMvyg" do
     repository 'https://github.com/taylormonacelli/dotfiles.git'

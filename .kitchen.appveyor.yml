@@ -42,3 +42,4 @@ suites:
     attributes:
       chef_dotfiles:
         dotfiles_path: 'C:\Users\vagrant\dotfiles'
+    named_run_list: run

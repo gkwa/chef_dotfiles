@@ -66,4 +66,4 @@ suites:
     attributes:
       chef_dotfiles:
         dotfiles_path: '/root/dotfiles'
-    named_run_list: run
+    named_run_list: myrun

@@ -11,9 +11,6 @@ provisioner:
   name: chef_zero
 
 platforms:
-  - name: mwrock/Windows2016
-    driver_config:
-      box: mwrock/Windows2016
   - name: windows-10
     driver_config:
       box: chef/windows-10-enterprise

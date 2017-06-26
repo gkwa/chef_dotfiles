@@ -13,7 +13,10 @@ if node['platform'] == 'windows'
       git init
       git remote add origin https://github.com/taylormonacelli/dotfiles.git
       git fetch --depth 50
-      git checkout --force master
+      try {
+        git checkout --force master
+      } catch {
+      }
     EOH
     not_if 'test-path .git'
   end

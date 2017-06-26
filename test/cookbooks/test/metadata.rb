@@ -1,6 +1,6 @@
 name 'test'
-maintainer 'Taylor Monacelli'
-maintainer_email 'taylor.monacelli@streambox.com'
+maintainer 'The Authors'
+maintainer_email 'you@example.com'
 license 'All Rights Reserved'
 description 'Installs/Configures test'
 long_description 'Installs/Configures test'

@@ -11,6 +11,10 @@ provisioner:
   name: chef_zero
 
 platforms:
+  - name: windows-10
+    driver_config:
+      box: chef/windows-10-enterprise
+  - name: windows-2012R2
   - name: windows-2012r2-chef12
     driver_config:
       box: chef/windows-server-2012r2-standard
@@ -30,7 +34,6 @@ verifier:
 
 suites:
   - name: default
+    run_list:
+      - recipe[test::default]
     attributes:
-      chef_dotfiles:
-        dotfiles_path: 'C:\Users\vagrant'
-    named_run_list: myrun

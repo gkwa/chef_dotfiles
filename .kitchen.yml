@@ -29,8 +29,6 @@ platforms:
       box: chef/windows-server-2012r2-standard
 
 suites:
-  - name: default
-    attributes:
-      chef_dotfiles:
-        dotfiles_path: 'C:\Users\vagrant'
-    named_run_list: myrun
+  - name: tasks
+    run_list:
+      - recipe[test::default]

@@ -61,5 +61,7 @@ platforms:
 
 suites:
   - name: default
-    run_list:
-    - recipe[test::default]
+    attributes:
+      chef_dotfiles:
+        dotfiles_path: '/root'
+    named_run_list: myrun

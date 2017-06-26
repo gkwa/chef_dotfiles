@@ -1,15 +1,4 @@
-include_recipe 'chocolatey'
-
-if node['platform'] != 'windows'
-  package 'git'
-else
-
-  chocolatey_package 'git'
-
-  windows_path 'C:\Program Files\Git\bin' do
-    action :add
-  end
-end
+include_recipe 'chef_dotfiles::_base'
 
 directory node['chef_dotfiles']['dotfiles_path'] do
   action :create
@@ -17,12 +6,6 @@ directory node['chef_dotfiles']['dotfiles_path'] do
 end
 
 if node['platform'] == 'windows'
-
-  chocolatey_package 'git'
-
-  windows_path 'C:\Program Files\Git\bin' do
-    action :add
-  end
 
   powershell_script "clone dotfiles to \"#{node['chef_dotfiles']['dotfiles_path']}\"" do
     cwd node['chef_dotfiles']['dotfiles_path']

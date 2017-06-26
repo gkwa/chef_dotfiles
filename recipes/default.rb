@@ -18,6 +18,9 @@ if node['platform'] == 'windows'
       } catch {
         $error.removeAt(0)
       }
+      if (1 -le $error.count) {
+        $error.removeAt(0)
+      }
     EOH
     not_if 'test-path .git'
   end

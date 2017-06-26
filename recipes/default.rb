@@ -16,6 +16,7 @@ if node['platform'] == 'windows'
       try {
         git checkout --force master
       } catch {
+        $error.removeAt(0)
       }
     EOH
     not_if 'test-path .git'

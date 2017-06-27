@@ -11,10 +11,7 @@ provisioner:
   name: chef_zero
 
 platforms:
- - name: windows-10
-    driver_config:
-      box: chef/windows-10-enterprise
- - name: windows-2012r2
+  - name: windows-2012r2
     driver_config:
       box: chef/windows-server-2012r2-standard
   - name: windows-2012r2-chef12

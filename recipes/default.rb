@@ -18,7 +18,7 @@ if node['platform'] == 'windows'
         $error.removeAt(0)
       }
     EOH
-    not_if 'test-path .git'
+    not_if { ::Dir.exist?('.git') }
   end
 
 else
@@ -31,7 +31,7 @@ else
       git fetch --depth 50
       git checkout --force master
     EOH
-    not_if 'test -d .git'
+    not_if { ::Dir.exist?('.git') }
   end
 
 end

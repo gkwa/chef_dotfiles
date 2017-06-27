@@ -5,6 +5,7 @@ sudo: required
 install:
   - curl -L https://www.chef.io/chef/install.sh | sudo bash -s -- -P chefdk
   - chef exec bundle install --without=development integration
+  - chef gem install rake
 
 matrix:
   include:
@@ -13,7 +14,6 @@ matrix:
     osx_image: xcode8.2
 
 before_script:
-  - chef gem install rake
   - export PATH=$PATH:/Users/travis/.chefdk/gem/ruby/2.3.0/bin
 
 script:

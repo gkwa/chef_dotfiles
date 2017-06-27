@@ -14,6 +14,7 @@ matrix:
 
 before_script:
   - chef gem install rake
+  - export PATH=$PATH:/Users/travis/.chefdk/gem/ruby/2.3.0/bin
 
 script:
 - KITCHEN_YAML=.kitchen.localhost.yml bundle exec kitchen verify macosx

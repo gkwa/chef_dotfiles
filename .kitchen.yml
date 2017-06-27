@@ -11,6 +11,9 @@ verifier:
   name: inspec
 
 platforms:
+  - name: windows-2012r2-chef12
+    driver_config:
+      box: chef/windows-server-2012r2-standard
 
 suites:
   - name: default

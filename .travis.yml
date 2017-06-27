@@ -3,7 +3,7 @@ language: ruby
 sudo: required
 
 install:
-  - curl -L https://omnitruck.chef.io/install.sh | sudo bash -s -- -v 12.0.2
+  - curl -L https://omnitruck.chef.io/install.sh | sudo bash -s -- -c stable -P chefdk
   - chef exec bundle install --without=development integration
   - chef gem install rake -v 12
 

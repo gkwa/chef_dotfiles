@@ -6,7 +6,7 @@ gem 'chefspec'
 gem 'cookstyle'
 gem 'foodcritic'
 
-group :integration do
+group :integration, :optional => false do
   gem 'rake'
   gem 'kitchen-dokken'
   gem 'kitchen-localhost'

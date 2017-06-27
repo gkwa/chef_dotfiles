@@ -13,11 +13,8 @@ matrix:
     rvm: 2.3.1
     osx_image: xcode8.2
 
-before_script:
-  - export PATH=$PATH:/Users/travis/.chefdk/gem/ruby/2.3.0/bin
-
 script:
-- KITCHEN_YAML=.kitchen.localhost.yml bundle exec kitchen verify macosx
+- PATH=$PATH:/Users/travis/.chefdk/gem/ruby/2.3.0/bin KITCHEN_YAML=.kitchen.localhost.yml bundle exec kitchen verify macosx
 
 branches:
   only:

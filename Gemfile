@@ -5,10 +5,8 @@ gem 'chef', '~> 12.6'
 gem 'chefspec'
 gem 'cookstyle'
 gem 'foodcritic'
-gem 'rake', '>=12'
 
-group :integration, :optional => false do
-  gem 'rake', '>=12'
+group :integration do
   gem 'kitchen-dokken'
   gem 'kitchen-localhost'
   gem 'kitchen-vagrant'

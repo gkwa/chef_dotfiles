@@ -8,6 +8,8 @@ provisioner:
 
 platforms:
   - name: macosx-10
+    driver:
+      name: localhost
   - name: windows-2012R2
 
 suites:

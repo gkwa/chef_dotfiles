@@ -31,7 +31,7 @@ platforms:
 verifier:
   name: inspec
   inspec_tests:
-    - name: test/integration/default/inspec
+    - path: test/integration/default/inspec
 
 suites:
   - name: default

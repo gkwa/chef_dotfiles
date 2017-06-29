@@ -13,7 +13,7 @@ verifier:
   name: inspec
   sudo: true
   inspec_tests:
-    - name: test/integration/default/inspec
+    - path: test/integration/default/inspec
 
 platforms:
 - name: centos-6.9

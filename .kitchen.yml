@@ -6,7 +6,7 @@ provisioner:
   name: chef_solo
 
 verifier:
-  name: inspec
+  name: :inspec
 
 platforms:
   - name: windows-2012r2-chef12

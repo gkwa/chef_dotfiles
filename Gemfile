@@ -12,4 +12,5 @@ group :integration do
   gem 'kitchen-vagrant'
   gem 'test-kitchen', '~> 1.13.0'
   gem 'winrm-fs'
+  gem 'kitchen-inspec'
 end

@@ -26,7 +26,6 @@ else
   bash "force checkout dotfiles to \"#{node['chef_dotfiles']['dotfiles_path']}\"" do
     cwd node['chef_dotfiles']['dotfiles_path']
     code <<-EOH
-      cd "#{node['chef_dotfiles']['dotfiles_path']}"
       git init
       git remote add origin https://github.com/taylormonacelli/dotfiles.git
       git fetch --depth 50

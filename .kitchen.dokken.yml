@@ -64,4 +64,7 @@ suites:
     attributes:
       chef_dotfiles:
         dotfiles_path: '/root'
+    verifier:
+      inspec_tests:
+        - name: test/integration/default/inspec
     named_run_list: myrun

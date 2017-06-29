@@ -10,8 +10,6 @@ provisioner:
 
 verifier:
   name: serverspec
-  patterns:
-    - test/integration/default/inspec/default.rb
 
 platforms:
   - name: windows-2012r2-chef12

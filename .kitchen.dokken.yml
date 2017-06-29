@@ -12,8 +12,6 @@ provisioner:
 verifier:
   name: serverspec
   sudo: true
-   patterns:
-     - test/integration/default/inspec/default.rb
 
 platforms:
 - name: centos-6.9

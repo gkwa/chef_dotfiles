@@ -30,8 +30,6 @@ platforms:
 
 verifier:
   name: serverspec
-  patterns:
-    - test/integration/default/inspec/default.rb
 
 suites:
   - name: default

@@ -16,3 +16,6 @@ suites:
   - name: default
     run_list:
       - test
+    attributes:
+      chef_dotfiles:
+        dotfiles_path: /Users/travis/.tmux.conf

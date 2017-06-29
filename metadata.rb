@@ -9,6 +9,7 @@ chef_version '>= 12.1' if respond_to?(:chef_version)
 supports 'fedora'
 supports 'ubuntu'
 supports 'windows'
+supports 'mac_os_x'
 issues_url 'https://github.com/taylormonacelli/chef_dotfiles/issues'
 source_url 'https://github.com/taylormonacelli/chef_dotfiles'
 

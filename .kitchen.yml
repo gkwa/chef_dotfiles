@@ -1,14 +1,9 @@
+---
 driver:
   name: vagrant
-  customize:
-    cpus: 2
-    memory: 4096
 
 provisioner:
-  name: chef_zero
-
-verifier:
-  name: inspec
+  name: chef_solo
 
 platforms:
   - name: windows-2012r2-chef12

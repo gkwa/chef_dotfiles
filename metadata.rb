@@ -16,5 +16,3 @@ source_url 'https://github.com/taylormonacelli/chef_dotfiles'
 license 'Apache-2.0'
 depends 'windows'
 depends 'chocolatey'
-
-depends 'dmg', '>= 3.0'

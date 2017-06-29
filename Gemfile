@@ -5,6 +5,8 @@ gem 'chef', '~> 12.6'
 gem 'chefspec'
 gem 'cookstyle'
 gem 'foodcritic'
+gem 'serverspec'
+gem 'busser-serverspec'
 
 group :integration do
   gem 'kitchen-dokken'
@@ -12,5 +14,4 @@ group :integration do
   gem 'kitchen-vagrant'
   gem 'test-kitchen', '~> 1.13.0'
   gem 'winrm-fs'
-  gem 'serverspec'
 end

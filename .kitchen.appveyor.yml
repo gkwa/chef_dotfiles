@@ -30,8 +30,8 @@ platforms:
 
 verifier:
   name: serverspec
-  inspec_tests:
-    - path: test/integration/default/inspec
+  patterns:
+    - test/integration/default/inspec/default.rb
 
 suites:
   - name: default

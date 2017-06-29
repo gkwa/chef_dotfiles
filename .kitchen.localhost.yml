@@ -8,8 +8,8 @@ provisioner:
 
 verifier:
   name: serverspec
-  inspec_tests:
-    - path: test/integration/default/inspec
+  patterns:
+    - test/integration/default/inspec/default.rb
 
 platforms:
   - name: macosx-10

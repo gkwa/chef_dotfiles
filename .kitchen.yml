@@ -9,7 +9,7 @@ provisioner:
   name: chef_zero
 
 verifier:
-  name: inspec
+  name: serverspec
   inspec_tests:
     - path: test/integration/default/inspec
 

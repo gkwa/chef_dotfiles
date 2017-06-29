@@ -10,7 +10,7 @@ provisioner:
   name: dokken
 
 verifier:
-  name: inspec
+  name: serverspec
   sudo: true
   inspec_tests:
     - path: test/integration/default/inspec

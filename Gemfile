@@ -5,7 +5,6 @@ gem 'chef', '~> 12.6'
 gem 'chefspec'
 gem 'cookstyle'
 gem 'foodcritic'
-gem 'serverspec'
 gem 'busser-serverspec'
 
 group :integration do

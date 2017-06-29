@@ -21,4 +21,7 @@ suites:
     attributes:
       chef_dotfiles:
         dotfiles_path: 'C:\Users\vagrant'
+    verifier:
+      inspec_tests:
+        - test/integration/default/inspec
     named_run_list: myrun

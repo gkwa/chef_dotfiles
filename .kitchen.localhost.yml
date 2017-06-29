@@ -18,4 +18,4 @@ suites:
       - test
     attributes:
       chef_dotfiles:
-        dotfiles_path: /Users/travis/.tmux.conf
+        dotfiles_path: /Users/travis

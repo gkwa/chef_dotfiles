@@ -1,4 +1,4 @@
-require 'serverspec_helper'
+require 'serverspec'
 
 if os[:family] == 'windows'
   describe file('c:\Users\vagrant\.tmux.conf') do

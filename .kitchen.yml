@@ -1,9 +1,12 @@
 ---
 driver:
   name: vagrant
+  customize:
+    cpus: 2
+    memory: 4096
 
 provisioner:
-  name: chef_solo
+  name: chef_zero
 
 verifier:
   name: inspec

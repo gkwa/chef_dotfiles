@@ -5,8 +5,7 @@ license 'All Rights Reserved'
 description 'Installs/Configures chef_dotfiles'
 long_description 'Installs/Configures chef_dotfiles'
 version '0.1.1'
-chef_version '>= 12.14'
-
+chef_version '>= 12.1' if respond_to?(:chef_version)
 supports 'fedora'
 supports 'ubuntu'
 supports 'windows'

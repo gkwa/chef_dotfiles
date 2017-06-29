@@ -8,9 +8,6 @@ driver:
 provisioner:
   name: chef_zero
 
-verifier:
-  name: serverspec
-
 platforms:
   - name: windows-2012r2-chef12
     driver_config:

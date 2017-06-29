@@ -27,6 +27,7 @@ else
     cwd node['chef_dotfiles']['dotfiles_path']
     code <<-EOH
       cd "#{node['chef_dotfiles']['dotfiles_path']}"
+      git init
       git remote add origin https://github.com/taylormonacelli/dotfiles.git
       git fetch --depth 50
       git checkout --force master

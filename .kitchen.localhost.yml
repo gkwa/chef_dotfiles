@@ -6,6 +6,11 @@ provisioner:
   name: chef_zero
   require_chef_omnibus: 12
 
+verifier:
+  name: inspec
+  inspec_tests:
+    - name: test/integration/default/inspec
+
 platforms:
   - name: macosx-10
     driver:
@@ -14,8 +19,5 @@ platforms:
 
 suites:
   - name: default
-    verifier:
-      inspec_tests:
-        - name: test/integration/default/inspec
     run_list:
       - test

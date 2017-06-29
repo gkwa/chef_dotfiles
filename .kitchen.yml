@@ -10,6 +10,8 @@ provisioner:
 
 verifier:
   name: inspec
+  inspec_tests:
+    - name: test/integration/default/inspec
 
 platforms:
   - name: windows-2012r2-chef12
@@ -21,7 +23,4 @@ suites:
     attributes:
       chef_dotfiles:
         dotfiles_path: 'C:\Users\vagrant'
-    verifier:
-      inspec_tests:
-        - name: test/integration/default/inspec
     named_run_list: myrun

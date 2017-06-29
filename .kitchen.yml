@@ -23,5 +23,5 @@ suites:
         dotfiles_path: 'C:\Users\vagrant'
     verifier:
       inspec_tests:
-        - test/integration/default/inspec
+        - name: test/integration/default/inspec
     named_run_list: myrun

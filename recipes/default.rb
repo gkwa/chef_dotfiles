@@ -7,7 +7,7 @@ end
 
 if node['platform'] == 'windows'
 
-  powershell_script "clone dotfiles to \"#{node['chef_dotfiles']['dotfiles_path']}\"" do
+  powershell_script "force checkout dotfiles to \"#{node['chef_dotfiles']['dotfiles_path']}\"" do
     cwd node['chef_dotfiles']['dotfiles_path']
     code <<-EOH
       git init
@@ -23,7 +23,7 @@ if node['platform'] == 'windows'
 
 else
 
-  bash "clone dotfiles to \"#{node['chef_dotfiles']['dotfiles_path']}\"" do
+  bash "force checkout dotfiles to \"#{node['chef_dotfiles']['dotfiles_path']}\"" do
     cwd node['chef_dotfiles']['dotfiles_path']
     code <<-EOH
       cd "#{node['chef_dotfiles']['dotfiles_path']}"

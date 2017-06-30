@@ -16,6 +16,6 @@ suites:
   - name: default
     attributes:
       chef_dotfiles:
-        dotfiles_path: '/root'
+        dotfiles_path: /root
     run_list:
       - test

@@ -14,8 +14,8 @@ platforms:
 
 suites:
   - name: default
+    run_list:
+      - test
     attributes:
       chef_dotfiles:
         dotfiles_path: /root
-    run_list:
-      - test

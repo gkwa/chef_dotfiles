@@ -1,4 +1,4 @@
-include_recipe 'chef_dotfiles::_base'
+include_recipe 'chef_dotfiles::install_git'
 
 directory node['chef_dotfiles']['dotfiles_path'] do
   action :create

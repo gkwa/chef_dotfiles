@@ -12,6 +12,7 @@ platforms:
       name: localhost
   - name: windows-2012R2
 
+
 suites:
   - name: default
     run_list:

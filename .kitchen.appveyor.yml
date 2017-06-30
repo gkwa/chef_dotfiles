@@ -28,6 +28,9 @@ platforms:
     provisioner:
       require_chef_omnibus: 12
 
+verifier:
+  name: inspec
+
 suites:
   - name: default
     attributes:

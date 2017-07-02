@@ -18,7 +18,6 @@ services: docker
 
 env:
   matrix:
-  - INSTANCE=default-fedora-latest
   - INSTANCE=default-ubuntu-1604
 
 before_script:

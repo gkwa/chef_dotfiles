@@ -8,6 +8,7 @@ transport:
   name: dokken
 
 verifier:
+  root_path: '/opt/verifier'
   sudo: false
 
 provisioner:

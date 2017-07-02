@@ -1,4 +1,4 @@
-case node[:platform]
+case node['platform']
 when 'windows'
   include_recipe 'chocolatey'
 

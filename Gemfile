@@ -6,7 +6,6 @@ gem 'chefspec'
 gem 'cookstyle'
 gem 'foodcritic'
 gem 'rubocop'
-gem 'chefspec'
 
 group :integration do
   gem 'winrm-fs', '~> 1.0'

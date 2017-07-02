@@ -5,11 +5,11 @@ directory node['chef_dotfiles']['dotfiles_path'] do
   recursive true
 end
 
-title = "force checkout dotfiles to \"#{node['chef_dotfiles']['dotfiles_path']}\""
+path = node['chef_dotfiles']['dotfiles_path']
 
 if node['platform'] == 'windows'
 
-  powershell_script title do
+  powershell_script "force checkout dotfiles to \"#{path}\"" do
     cwd node['chef_dotfiles']['dotfiles_path']
     code <<-EOH
       git init
@@ -25,7 +25,7 @@ if node['platform'] == 'windows'
 
 else
 
-  bash title do
+  bash "force checkout dotfiles to \"#{path}\"" do
     cwd node['chef_dotfiles']['dotfiles_path']
     code <<-EOH
       git init

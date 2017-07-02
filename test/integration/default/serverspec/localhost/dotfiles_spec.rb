@@ -1,10 +1,11 @@
 require 'spec_helper'
 
-if os[:family] == 'windows'
+case os[:family]
+when 'windows'
   describe file('c:\Users\vagrant\.tmux.conf') do
     it { should be_a_file }
   end
-elsif os[:family] == 'macOS'
+when 'macOS'
   describe file('/Users/travis/.tmux.conf') do
     it { should be_a_file }
   end

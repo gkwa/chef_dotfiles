@@ -7,8 +7,8 @@ end
 
 path = node['chef_dotfiles']['dotfiles_path']
 
-if node['platform'] == 'windows'
-
+case node['platform']
+when 'windows'
   powershell_script "force checkout dotfiles to \"#{path}\"" do
     cwd node['chef_dotfiles']['dotfiles_path']
     code <<-EOH
@@ -24,7 +24,6 @@ if node['platform'] == 'windows'
   end
 
 else
-
   bash "force checkout dotfiles to \"#{path}\"" do
     cwd node['chef_dotfiles']['dotfiles_path']
     code <<-EOH

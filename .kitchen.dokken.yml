@@ -15,6 +15,11 @@ provisioner:
   name: dokken
 
 platforms:
+- name: centos-6.9
+  driver:
+    image: centos:6.9
+    pid_one_command: /sbin/init
+
 - name: centos-7
   driver:
     image: centos:7

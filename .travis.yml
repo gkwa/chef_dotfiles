@@ -18,6 +18,7 @@ services: docker
 
 env:
   matrix:
+  - INSTANCE=default-centos-69
   - INSTANCE=default-centos-7
   - INSTANCE=default-debian-711
   - INSTANCE=default-opensuse-leap

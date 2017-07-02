@@ -5,6 +5,7 @@ gem 'chef', '~> 12.6'
 gem 'chefspec'
 gem 'cookstyle'
 gem 'foodcritic'
+gem 'rubocop'
 
 group :integration do
   gem 'kitchen-dokken'

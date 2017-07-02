@@ -1,11 +1,9 @@
 sudo: required
-dist: trusty
-group: edge
 
 addons:
   apt:
     sources:
-      - chef-current-trusty
+      - chef-current-precise
     packages:
       - chefdk
 

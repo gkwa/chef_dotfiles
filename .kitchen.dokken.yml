@@ -61,3 +61,8 @@ suites:
       chef_dotfiles:
         dotfiles_path: /root
     named_run_list: myrun
+  - name: path-with-spaces
+    attributes:
+      chef_dotfiles:
+        dotfiles_path: /root/path with spaces
+    named_run_list: myrun

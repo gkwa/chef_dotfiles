@@ -24,6 +24,7 @@ env:
   - INSTANCE=default-fedora-latest
   - INSTANCE=default-ubuntu-1604
   - INSTANCE=default-fedora-22
+  - INSTANCE=path-with-spaces-ubuntu-1604
 
 before_script:
   - sudo iptables -L DOCKER || ( echo "DOCKER iptables chain missing" ; sudo iptables -N DOCKER )

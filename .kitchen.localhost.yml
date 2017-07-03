@@ -19,3 +19,9 @@ suites:
         dotfiles_path: /root
     run_list:
       - test
+  - name: path-with-spaces
+    attributes:
+      chef_dotfiles:
+        dotfiles_path: /root/path with spaces
+    run_list:
+      - test

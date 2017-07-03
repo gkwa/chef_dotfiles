@@ -7,8 +7,6 @@ addons:
     packages:
       - chefdk
 
-# Don't `bundle install` which takes about 1.5 mins
-install: echo "skip bundle install"
 matrix:
   include:
   - os: osx
@@ -24,35 +22,9 @@ matrix:
     rvm: 2.3.1
     osx_image: xcode7.3
 
+script:
+- KITCHEN_YAML=.kitchen.localhost.yml bundle exec kitchen verify macosx
 
 branches:
   only:
-    - master
-
-services: docker
-
-env:
-  matrix:
-  - INSTANCE=default-centos-7
-  - INSTANCE=default-debian-711
-  - INSTANCE=default-opensuse-leap
-  - INSTANCE=default-fedora-latest
-  - INSTANCE=default-ubuntu-1604
-  - INSTANCE=default-fedora-22
-  - INSTANCE=path-with-spaces-ubuntu-1604
-
-before_script:
-  - sudo iptables -L DOCKER || ( echo "DOCKER iptables chain missing" ; sudo iptables -N DOCKER )
-  - eval "$(/opt/chefdk/bin/chef shell-init bash)"
-  - /opt/chefdk/embedded/bin/chef --version
-  - /opt/chefdk/embedded/bin/cookstyle --version
-  - /opt/chefdk/embedded/bin/foodcritic --version
-  - /opt/chefdk/embedded/bin/chef gem install kitchen-dokken
-
-script: KITCHEN_LOCAL_YAML=.kitchen.dokken.yml /opt/chefdk/embedded/bin/kitchen verify ${INSTANCE}
-
-matrix:
-  include:
-    - script:
-      - /opt/chefdk/bin/chef exec delivery local all
-      env: UNIT_AND_LINT=1
+  - macosx

@@ -13,7 +13,6 @@ source_url 'https://github.com/taylormonacelli/chef_dotfiles'
 supports 'fedora'
 supports 'ubuntu'
 supports 'windows'
-supports 'mac_os_x'
 
 license 'Apache-2.0'
 depends 'windows'

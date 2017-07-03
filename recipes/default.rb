@@ -1,16 +1,16 @@
 include_recipe 'chef_dotfiles::packages'
 
-directory node['chef_dotfiles']['dotfiles_path'] do
+dfpath = node['chef_dotfiles']['dotfiles_path']
+
+directory dfpath do
   action :create
   recursive true
 end
 
-path = node['chef_dotfiles']['dotfiles_path']
-
 case node['platform']
 when 'windows'
-  powershell_script "force checkout dotfiles to \"#{path}\"" do
-    cwd node['chef_dotfiles']['dotfiles_path']
+  powershell_script "force checkout dotfiles to \"#{dfpath}\"" do
+    cwd dfpath
     code <<-EOH
       git init
       git remote add origin https://github.com/taylormonacelli/dotfiles.git
@@ -24,8 +24,8 @@ when 'windows'
   end
 
 else
-  bash "force checkout dotfiles to \"#{path}\"" do
-    cwd node['chef_dotfiles']['dotfiles_path']
+  bash "force checkout dotfiles to \"#{dfpath}\"" do
+    cwd dfpath
     code <<-EOH
       git init
       git remote add origin https://github.com/taylormonacelli/dotfiles.git

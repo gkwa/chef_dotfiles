@@ -34,3 +34,8 @@ suites:
       chef_dotfiles:
         dotfiles_path: C:\Users\vagrant
     named_run_list: myrun
+  - name: path-with-spaces
+    attributes:
+      chef_dotfiles:
+        dotfiles_path: C:\Users\vagrant\path with spaces
+    named_run_list: myrun

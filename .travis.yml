@@ -1,5 +1,12 @@
 sudo: required
 
+addons:
+  apt:
+    sources:
+      - chef-current-trusty
+    packages:
+      - chefdk
+
 matrix:
   include:
   - os: osx

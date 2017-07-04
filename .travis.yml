@@ -3,9 +3,9 @@ sudo: required
 addons:
   apt:
     sources:
-      - chef-current-trusty
+    - chef-current-trusty
     packages:
-      - chefdk
+    - chefdk
 
 matrix:
   include:
@@ -39,17 +39,18 @@ env:
   - INSTANCE=path-with-spaces-ubuntu-1604
 
 before_script:
-  - sudo iptables -L DOCKER || ( echo "DOCKER iptables chain missing" ; sudo iptables -N DOCKER )
-  - eval "$(/opt/chefdk/bin/chef shell-init bash)"
-  - /opt/chefdk/embedded/bin/chef --version
-  - /opt/chefdk/embedded/bin/cookstyle --version
-  - /opt/chefdk/embedded/bin/foodcritic --version
-  - /opt/chefdk/embedded/bin/chef gem install kitchen-dokken
+- sudo iptables -L DOCKER || ( echo "DOCKER iptables chain missing" ; sudo iptables -N DOCKER )
+- eval "$(/opt/chefdk/bin/chef shell-init bash)"
+- /opt/chefdk/embedded/bin/chef --version
+- /opt/chefdk/embedded/bin/cookstyle --version
+- /opt/chefdk/embedded/bin/foodcritic --version
+- /opt/chefdk/embedded/bin/chef gem install kitchen-dokken
 
-script: KITCHEN_LOCAL_YAML=.kitchen.dokken.yml /opt/chefdk/embedded/bin/kitchen verify ${INSTANCE}
+script:
+- KITCHEN_LOCAL_YAML=.kitchen.dokken.yml /opt/chefdk/embedded/bin/kitchen verify ${INSTANCE}
 
 matrix:
   include:
-    - script:
-      - /opt/chefdk/bin/chef exec delivery local all
-      env: UNIT_AND_LINT=1
+  - script:
+    - /opt/chefdk/bin/chef exec delivery local all
+    env: UNIT_AND_LINT=1

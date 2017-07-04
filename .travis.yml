@@ -3,9 +3,9 @@ sudo: required
 addons:
   apt:
     sources:
-      - chef-current-trusty
+    - chef-current-trusty
     packages:
-      - chefdk
+    - chefdk
 
 matrix:
   include:

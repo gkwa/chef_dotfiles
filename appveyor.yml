@@ -19,6 +19,7 @@ install:
   - ps: iex (irm https://omnitruck.chef.io/install.ps1); Install-Project -Project chefdk -channel stable
   - ps: 'Get-CimInstance win32_operatingsystem -Property Caption, OSArchitecture, Version | fl Caption, OSArchitecture, Version'
   - ps: $PSVersionTable
+  - ps: $env:PATH="c:\opscode\chefdk\bin;$env:PATH"
   - chef exec ruby --version
   - chef gem install chef-sugar
   - chef gem install kitchen-pester

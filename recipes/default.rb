@@ -15,8 +15,9 @@ when 'windows'
       git init
       git remote add origin https://github.com/taylormonacelli/dotfiles.git
       git fetch --depth 50
+      $ec = $error.count
       git checkout --force master
-      if (1 -le $error.count) {
+      if ($ec -ne $error.count) {
         $error.removeAt(0)
       }
     EOH

@@ -20,9 +20,9 @@ install:
   - ps: 'Get-CimInstance win32_operatingsystem -Property Caption, OSArchitecture, Version | fl Caption, OSArchitecture, Version'
   - ps: $PSVersionTable
   - ps: $env:PATH="c:\opscode\chefdk\bin;$env:PATH"
-  - ps: chef exec ruby --version
-  - ps: chef gem install chef-sugar
-  - ps: chef gem install kitchen-pester
+  - chef exec ruby --version
+  - chef gem install chef-sugar
+  - chef gem install kitchen-pester
   - ps: secedit /export /cfg $env:temp/export.cfg
   - ps: ((get-content $env:temp/export.cfg) -replace ('PasswordComplexity = 1', 'PasswordComplexity = 0')) | Out-File $env:temp/export.cfg
   - ps: ((get-content $env:temp/export.cfg) -replace ('MinimumPasswordLength = 8', 'MinimumPasswordLength = 0')) | Out-File $env:temp/export.cfg

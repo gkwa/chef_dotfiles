@@ -13,7 +13,7 @@ when 'windows'
     cwd dfpath
     code <<-EOH
       git init
-      git remote add origin https://github.com/taylormonacelli/dotfiles.git
+      git remote add origin #{node['chef_dotfiles']['repo_url']}
       git fetch --depth 50
       $ec = $error.count
       git checkout --force master
@@ -29,7 +29,7 @@ else
     cwd dfpath
     code <<-EOH
       git init
-      git remote add origin https://github.com/taylormonacelli/dotfiles.git
+      git remote add origin #{node['chef_dotfiles']['repo_url']}
       git fetch --depth 50
       git checkout --force master
     EOH

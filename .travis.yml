@@ -3,6 +3,8 @@ language: ruby
 sudo: required
 dist: trusty
 
+language: ruby
+
 group: edge
 
 addons:

@@ -24,7 +24,7 @@ matrix:
 
 branches:
   only:
-    - master
+  - master
 
 services: docker
 

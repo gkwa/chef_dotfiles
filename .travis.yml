@@ -32,7 +32,7 @@ services: docker
 
 env:
   global:
-    - KITCHEN_LOCAL_YAML: .kitchen.dokken.yml
+    - KITCHEN_YAML: .kitchen.dokken.yml
   matrix:
   - INSTANCE=default-centos-7
   - INSTANCE=default-debian-711

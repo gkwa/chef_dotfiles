@@ -1,6 +1,9 @@
 language: ruby
 cache: bundler
 
+environment:
+  KITCHEN_YAML: .kitchen.dokken.yml
+
 sudo: required
 dist: trusty
 
@@ -49,7 +52,7 @@ before_script:
 - chef gem install kitchen-dokken
 
 script:
-- KITCHEN_LOCAL_YAML=.kitchen.dokken.yml kitchen verify ${INSTANCE}
+- kitchen verify ${INSTANCE}
 
 matrix:
   include:

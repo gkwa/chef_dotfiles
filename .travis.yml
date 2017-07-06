@@ -1,7 +1,7 @@
 language: ruby
 cache: bundler
 
-env:
+environment:
   KITCHEN_YAML: .kitchen.dokken.yml
 
 sudo: required

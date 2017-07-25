@@ -15,12 +15,9 @@ when 'windows'
       git init
       git remote add origin #{node['chef_dotfiles']['repo_url']}
       git fetch --depth #{node['chef_dotfiles']['repo_depth']}
-      $ec = $error.count
       git checkout --force #{node['chef_dotfiles']['repo_branch']}
-      if ($ec -ne $error.count) {
-        $error.removeAt(0)
-      }
     EOH
+    returns [0, 1]
     not_if { ::Dir.exist?('.git') }
   end
 

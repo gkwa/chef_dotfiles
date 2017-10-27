@@ -18,7 +18,7 @@ when 'windows'
       git checkout --force #{node['chef_dotfiles']['repo_branch']}
     EOH
     returns [0, 1]
-    not_if { ::Dir.exist?('.git') }
+    not_if { ::Dir.exist?("#{node['chef_dotfiles']['dotfiles_path']}/.git") }
   end
 
 else
@@ -30,7 +30,7 @@ else
       git fetch --depth #{node['chef_dotfiles']['repo_depth']}
       git checkout --force #{node['chef_dotfiles']['repo_branch']}
     EOH
-    not_if { ::Dir.exist?('.git') }
+    not_if { ::Dir.exist?("#{node['chef_dotfiles']['dotfiles_path']}/.git") }
   end
 
 end
